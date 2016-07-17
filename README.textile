@@ -1,0 +1,5 @@
+NOAA publishes an amazing trove of historical weather data from stations all over the world - http://www.ncdc.noaa.gov/cgi-bin/res40.pl - but in a rather awkward format: each year is a separate folder, in which each station is one file, identified by two arbitrary ref numbers. Each file is gzipped text in a rather non-standard format with some inconvenient features like NULL tokens varying per field, and numbers being concatenated together with flags that give interpretation information: ftp://ftp.ncdc.noaa.gov/pub/data/gsod/readme.txt
+
+This script lets the user specify a station and a number of years to download. It then iterates through, downloading enough years, parsing them into a much more standard CSV format read for use in (e.g.) Excel or Tableau, and concatenating them into one continuous file per station.
+
+Here's an example of what you can make with the output: http://eldan.co.uk/2012/10/rain-redux/
